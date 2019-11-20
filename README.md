@@ -20,7 +20,7 @@ Logs:
 ```bash
 docker logs -f <container_ID>
 ```
-Interactive with bash:
+Interact with bash:
 ```bash
 docker exec -it <container_ID> bash
 
