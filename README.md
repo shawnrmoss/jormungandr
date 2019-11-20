@@ -24,6 +24,8 @@ Interact with bash:
 ```bash
 docker exec -it <container_ID> bash
 ```
+Test docker image outputting rustc and cargo versions
+docker run --rm jormungandr jscli --version && docker run --rm jormungandr rustc --version && docker run --rm jormungandr cargo --version
 
 [docs](https://input-output-hk.github.io/jormungandr/introduction.html)<br/>
 [official github](https://github.com/input-output-hk/jormungandr)
