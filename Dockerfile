@@ -3,7 +3,12 @@ FROM alpine:3.8
 
 # Update install tools
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git rust cargo
+    apk add --no-cache bash git
+
+FROM rust:1.39.0
+
+# Download the target for static linking.
+# RUN rustup target add x86_64-unknown-linux-musl
 
 # Install Jormungandr
 RUN git clone --recurse-submodules https://github.com/input-output-hk/jormungandr /jormungandr && \
