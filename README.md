@@ -25,5 +25,5 @@ Interact with bash:
 docker exec -it <container_ID> bash
 ```
 
-[docs](https://input-output-hk.github.io/jormungandr/introduction.html)
+[docs](https://input-output-hk.github.io/jormungandr/introduction.html)<br/>
 [official github](https://github.com/input-output-hk/jormungandr)
