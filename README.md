@@ -23,6 +23,7 @@ docker logs -f <container_ID>
 Interact with bash:
 ```bash
 docker exec -it <container_ID> bash
+```
 
-https://input-output-hk.github.io/jormungandr/introduction.html
-https://github.com/input-output-hk/jormungandr
+[docs](https://input-output-hk.github.io/jormungandr/introduction.html)
+[official github](https://github.com/input-output-hk/jormungandr)
