@@ -1,18 +1,21 @@
 
-FROM alpine:3.8 
+FROM ubuntu:18.04 
 
-# Update install tools
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git
+# Update ubuntu and install OS tools
+RUN apt-get update -y && \
+    apt-get install -y apt-utils build-essential pkg-config libssl-dev curl git
 
-FROM rust:1.39.0
-
-# Download the target for static linking.
-# RUN rustup target add x86_64-unknown-linux-musl
+# Install Rust compiler and add binaries to path
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH "$PATH:/root/.cargo/bin"
+RUN rustup install stable && \
+    rustup default stable 
 
 # Install Jormungandr
 RUN git clone --recurse-submodules https://github.com/input-output-hk/jormungandr /jormungandr && \
     cd /jormungandr && \
+    git checkout tags/v0.8.4 && \
+    git submodule update && \
     cargo install --path jormungandr && \
     cargo install --path jcli
 
